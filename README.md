@@ -1,0 +1,3 @@
+# Newz
+A newz app 
+

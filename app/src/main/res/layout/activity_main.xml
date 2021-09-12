@@ -7,6 +7,113 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <HorizontalScrollView
+        android:id="@+id/categoriesView"
+        android:visibility="gone"
+        android:background="@color/dark_purple"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/refresh"
+        android:layout_height="37dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/business"
+                android:textStyle="bold"
+                android:onClick="categories"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:text="@string/business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/top_headlines"
+                android:onClick="categories"
+                android:textStyle="bold"
+                android:background="@drawable/custom_button"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:text="@string/top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/health"
+                android:onClick="categories"
+                android:textAllCaps="false"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:text="@string/health"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/science"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_marginStart="5dp"
+                android:textSize="20sp"
+                android:onClick="categories"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:text="@string/science"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/sports"
+                android:textStyle="bold"
+                android:onClick="categories"
+                android:textAllCaps="false"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_marginStart="5dp"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:text="@string/sports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/technology"
+                android:textStyle="bold"
+                android:onClick="categories"
+                android:textAllCaps="false"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_marginStart="5dp"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle,UsingOnClickInXml"
+                android:text="@string/technology"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer"
         android:layout_width="match_parent"
@@ -18,6 +125,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <include layout="@layout/shimmer_category"/>
             <include layout="@layout/shimmer_effect"/>
             <include layout="@layout/shimmer_effect"/>
             <include layout="@layout/shimmer_effect"/>
@@ -30,6 +138,7 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh"
+        android:layout_marginTop="37dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

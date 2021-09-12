@@ -30,26 +30,34 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#DB7D7D")))
         setContentView(R.layout.activity_main)
 
-        fetchNewz()
         scrolling_news.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL,false)
         scrolling_news.adapter = adapter
 
+        val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ac80584801114e8eae343d6fbbef1401"
+        fetchNewz(url)
+
         refresh.setOnRefreshListener {
             shimmer.startShimmer()
+            shimmer.visibility = View.VISIBLE
             scrolling_news.visibility = View.GONE
+            categoriesView.visibility = View.GONE
             Handler(Looper.getMainLooper()).postDelayed({
                 shimmer.stopShimmer()
+                shimmer.visibility = View.GONE
                 scrolling_news.visibility = View.VISIBLE
-            },1500)
-            fetchNewz()
+                categoriesView.visibility = View.VISIBLE
+            }, 1500)
             refresh.isRefreshing = false
             adapter.notifyDataSetChanged()
         }
+
     }
 
-    private fun fetchNewz() {
-        val url =
-            "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
+    private fun fetchNewz(url : String) {
+        shimmer.startShimmer()
+        shimmer.visibility = View.VISIBLE
+        scrolling_news.visibility = View.GONE
+        categoriesView.visibility = View.GONE
         val arrayList = ArrayList<NewzData>()
         val jsonObjectRequest = object : JsonObjectRequest(GET, url, null,
             {
@@ -66,14 +74,17 @@ class MainActivity : AppCompatActivity() {
                 adapter.updateNewz(arrayList)
                 Handler(Looper.getMainLooper()).postDelayed({
                     shimmer.stopShimmer()
+                    shimmer.visibility = View.GONE
                     scrolling_news.visibility = View.VISIBLE
-                },1500)
+                    categoriesView.visibility = View.VISIBLE
+                }, 1500)
             },
             {
+                Toast.makeText(this, "Couldn't load news", Toast.LENGTH_SHORT).show()
                 shimmer.startShimmer()
                 scrolling_news.visibility = View.GONE
-                Toast.makeText(this, "Couldn't load news", Toast.LENGTH_SHORT).show() })
-        {
+                categoriesView.visibility = View.GONE
+            }) {
             @Throws(AuthFailureError::class)
             override fun getHeaders(): Map<String, String> {
                 val headers = HashMap<String, String>()
@@ -83,4 +94,35 @@ class MainActivity : AppCompatActivity() {
         }
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
+
+    fun categories(view: View) {
+        when(view.id){
+            R.id.technology ->{
+                val url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+            R.id.business -> {
+                val url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+            R.id.top_headlines ->{
+                val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+            R.id.health ->{
+                val url = "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+            R.id.science ->{
+                val url = "https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+            R.id.sports ->{
+                val url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(url)
+            }
+        }
+    }
+
+
 }

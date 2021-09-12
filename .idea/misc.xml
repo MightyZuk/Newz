@@ -3,15 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/custom_button.xml" value="0.2203125" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/ic_google_pixel_2_xl___1.xml" value="0.2203125" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2203125" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/logo.xml" value="0.2203125" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/main_screen.xml" value="0.2203125" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/drawable/rounded_corner.xml" value="0.2203125" />
-        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/activity_main_screen.xml" value="0.22" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/fragment_business.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/fragment_health.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/fragment_science.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/fragment_sports.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/fragment_top_headlines.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/list_items.xml" value="0.25" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/main_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/shimmer_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/shimmer_effect.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/top.xml" value="0.25" />
         <entry key="..\:/Users/This PC/AndroidStudioProjects/Newz/app/src/main/res/layout/top.xml.lnk" value="0.19010416666666666" />

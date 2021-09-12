@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Newz</string>
+    <string name="technology">tech</string>
+    <string name="top">top</string>
+    <string name="business">business</string>
+    <string name="health">health</string>
+    <string name="science">science</string>
+    <string name="sports">sports</string>
 </resources>

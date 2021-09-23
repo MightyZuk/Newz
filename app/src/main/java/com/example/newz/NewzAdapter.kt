@@ -36,6 +36,7 @@ class NewzAdapter(private val context: Context) : RecyclerView.Adapter<NewzAdapt
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.newsImage)
+
         val url = currentNewz.url
         holder.itemView.setOnClickListener{
             val builder = CustomTabsIntent.Builder()
@@ -52,7 +53,6 @@ class NewzAdapter(private val context: Context) : RecyclerView.Adapter<NewzAdapt
     fun updateNewz(updateNewz : ArrayList<NewzData>){
         arrayList.clear()
         arrayList.addAll(updateNewz)
-
         notifyDataSetChanged()
     }
 }

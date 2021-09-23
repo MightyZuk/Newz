@@ -18,104 +18,103 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/refresh"
-        android:layout_height="37dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/category"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:layout_marginTop="5dp"
+            app:singleSelection="true"
+            app:checkedChip="@+id/top_headlines"
             android:layout_width="wrap_content"
-            android:padding="5dp"
-            android:layout_gravity="center_vertical"
             android:layout_height="wrap_content">
 
-            <Button
+            <com.google.android.material.chip.Chip
                 android:id="@+id/business"
-                android:textStyle="bold"
-                android:onClick="categories"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/custom_button"
+                android:textSize="18sp"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
+                android:backgroundTint="@color/button_background_color"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
-                android:textSize="20sp"
-                android:textAllCaps="false"
                 android:text="@string/business"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <Button
+            <com.google.android.material.chip.Chip
                 android:id="@+id/top_headlines"
-                android:onClick="categories"
-                android:textStyle="bold"
-                android:background="@drawable/custom_button"
-                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
+                android:backgroundTint="@color/button_background_color"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
-                android:textAllCaps="false"
-                android:textSize="20sp"
                 android:text="@string/top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <Button
+            <com.google.android.material.chip.Chip
                 android:id="@+id/health"
-                android:onClick="categories"
-                android:textAllCaps="false"
-                android:background="@drawable/custom_button"
+                android:textSize="18sp"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
+                android:backgroundTint="@color/button_background_color"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
                 android:text="@string/health"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_height="wrap_content"/>
 
-            <Button
+            <com.google.android.material.chip.Chip
                 android:id="@+id/science"
-                android:textStyle="bold"
-                android:textAllCaps="false"
-                android:background="@drawable/custom_button"
+                android:backgroundTint="@color/button_background_color"
+                android:textSize="18sp"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                android:layout_marginStart="5dp"
-                android:textSize="20sp"
-                android:onClick="categories"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
                 android:text="@string/science"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <Button
+            <com.google.android.material.chip.Chip
                 android:id="@+id/sports"
-                android:textStyle="bold"
-                android:onClick="categories"
-                android:textAllCaps="false"
-                android:background="@drawable/custom_button"
+                android:backgroundTint="@color/button_background_color"
+                android:textSize="18sp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                android:layout_marginStart="5dp"
-                android:textSize="20sp"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
                 android:text="@string/sports"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/technology"
-                android:textStyle="bold"
-                android:onClick="categories"
-                android:textAllCaps="false"
-                android:background="@drawable/custom_button"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/tech"
+                android:backgroundTint="@color/button_background_color"
+                android:textSize="18sp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
-                android:layout_marginStart="5dp"
-                android:textSize="20sp"
-                tools:ignore="ButtonStyle,UsingOnClickInXml"
                 android:text="@string/technology"
+                app:chipCornerRadius="15dp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+        </com.google.android.material.chip.ChipGroup>
 
     </HorizontalScrollView>
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -138,7 +137,7 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

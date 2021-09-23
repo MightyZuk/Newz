@@ -5,16 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="8dp"
-    android:backgroundTint="#EDE3E3"
+    android:backgroundTint="@color/layout_background_color"
     android:layout_height="270dp"
     tools:ignore="UnusedAttribute">
 
     <ImageView
+        android:background="@drawable/error"
         android:id="@+id/newsImage"
         android:layout_width="320dp"
         android:layout_height="200dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/rounded_corner"
         android:layout_gravity="center_horizontal"
         tools:ignore="ContentDescription" />
 

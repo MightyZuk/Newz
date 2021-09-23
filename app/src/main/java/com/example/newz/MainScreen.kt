@@ -16,6 +16,6 @@ class MainScreen : AppCompatActivity() {
             val intent = Intent(this@MainScreen,MainActivity::class.java)
             startActivity(intent)
             finish()
-        },900)
+        },500)
     }
 }

@@ -51,6 +51,34 @@ class MainActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         }
 
+        category.setOnCheckedChangeListener { group, _ ->
+            when(group.checkedChipId){
+                R.id.tech ->{
+                val tech = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
+                fetchNewz(tech)
+                }
+                R.id.business -> {
+                    val business = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(business)
+                }
+                R.id.top_headlines ->{
+                    val top = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(top)
+                }
+                R.id.health ->{
+                    val health = "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(health)
+                }
+                R.id.science ->{
+                    val science = "https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(science)
+                }
+                R.id.sports ->{
+                    val sports = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(sports)
+                }
+            }
+        }
     }
 
     private fun fetchNewz(url : String) {
@@ -94,35 +122,5 @@ class MainActivity : AppCompatActivity() {
         }
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
-
-    fun categories(view: View) {
-        when(view.id){
-            R.id.technology ->{
-                val url = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-            R.id.business -> {
-                val url = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-            R.id.top_headlines ->{
-                val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-            R.id.health ->{
-                val url = "https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-            R.id.science ->{
-                val url = "https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-            R.id.sports ->{
-                val url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(url)
-            }
-        }
-    }
-
 
 }

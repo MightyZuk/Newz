@@ -9,7 +9,7 @@
 
     <HorizontalScrollView
         android:id="@+id/categoriesView"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="@color/dark_purple"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -99,12 +99,12 @@
                 android:id="@+id/tech"
                 android:backgroundTint="@color/button_background_color"
                 android:textSize="18sp"
+                app:chipStrokeWidth="2dp"
+                app:chipStrokeColor="#9432BC"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:textColor="@color/white"
                 android:text="@string/technology"
                 app:chipCornerRadius="15dp"
-                app:chipStrokeWidth="2dp"
-                app:chipStrokeColor="#9432BC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -114,7 +114,7 @@
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">

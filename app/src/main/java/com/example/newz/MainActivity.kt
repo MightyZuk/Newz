@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private val adapter = NewzAdapter(this)
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "ResourceAsColor", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.title = null
@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         scrolling_news.layoutManager = LinearLayoutManager(this,RecyclerView.VERTICAL,false)
-        scrolling_news.adapter = adapter
 
         val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ac80584801114e8eae343d6fbbef1401"
         fetchNewz(url)
@@ -54,8 +53,8 @@ class MainActivity : AppCompatActivity() {
         category.setOnCheckedChangeListener { group, _ ->
             when(group.checkedChipId){
                 R.id.tech ->{
-                val tech = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
-                fetchNewz(tech)
+                    val tech = "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=ac80584801114e8eae343d6fbbef1401"
+                    fetchNewz(tech)
                 }
                 R.id.business -> {
                     val business = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=ac80584801114e8eae343d6fbbef1401"
@@ -86,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         shimmer.visibility = View.VISIBLE
         scrolling_news.visibility = View.GONE
         categoriesView.visibility = View.GONE
+        scrolling_news.adapter = adapter
         val arrayList = ArrayList<NewzData>()
         val jsonObjectRequest = object : JsonObjectRequest(GET, url, null,
             {

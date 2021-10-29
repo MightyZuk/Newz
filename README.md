@@ -1,5 +1,6 @@
 # Newz
 A newz app 
 
-![newz](https://user-images.githubusercontent.com/70520087/132985527-259dfa6b-215c-4bb9-b005-a4696a6d0708.jpg)
+https://user-images.githubusercontent.com/70520087/139422918-23a7bfcf-3084-4fd3-ad57-2b21301a102a.mp4
+
 
